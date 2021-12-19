@@ -1,5 +1,20 @@
 import React, { useState } from "react";
 import Input from "./Input";
+import {IState as Props} from "../App"
+
+interface IProps {
+  people: Props["people"];
+  setPeople: React.Dispatch<
+    React.SetStateAction<
+      {
+        name: string;
+        url: string;
+        age: number;
+        note?: string | undefined;
+      }[]
+    >
+  >;
+}
 
 const AddToList = () => {
   const [input, setInput] = useState({
@@ -11,12 +26,15 @@ const AddToList = () => {
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  ): void => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleClick = (): void => {};
+
   return (
     <div className='AddToList'>
       <Input placeholder='Name' input={input} handleChange={handleChange} />
@@ -27,9 +45,10 @@ const AddToList = () => {
         placeholder='Notes'
         name='note'
         onChange={handleChange}
-      >
-        Add
-      </textarea>
+      ></textarea>
+      <button className='AddToList-btn' onClick={handleClick}>
+        Add tto list
+      </button>
     </div>
   );
 };
