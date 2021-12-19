@@ -1,23 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import List from "./components/List";
+
+interface IState {
+  people: {
+    name: string;
+    url: string;
+    age: number;
+    note?: string;
+  }[];
+}
 
 function App() {
+  const [people, setPeople] = useState<IState["people"]>([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to hey.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='App'>
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
+        <p>Pople invited to my party </p>
+        <List people={people} />
       </header>
     </div>
   );
