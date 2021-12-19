@@ -8,6 +8,7 @@ interface IProps {
 }
 
 const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
+  debugger;
   const [input, setInput] = useState({
     name: "",
     url: "",
@@ -37,24 +38,30 @@ const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
         note: input.note,
       },
     ]);
+    setInput({
+      name: "",
+      url: "",
+      age: "",
+      note: "",
+    });
   };
 
   return (
     <div className='AddToList'>
       <Input
-        placeholder='Name'
+        pHolder='Name'
         type='text'
         input={input}
         handleChange={handleChange}
       />
       <Input
-        placeholder='Age'
+        pHolder='Age'
         type='number'
         input={input}
         handleChange={handleChange}
       />
       <Input
-        placeholder='Url'
+        pHolder='Url'
         type='text'
         input={input}
         handleChange={handleChange}

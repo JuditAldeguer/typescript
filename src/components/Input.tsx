@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 interface IProps {
-  placeholder: string;
+  pHolder: string;
   input: {
     name: string;
     url: string;
@@ -12,18 +12,14 @@ interface IProps {
   type: string;
 }
 
-const Input: React.FC<IProps> = ({
-  placeholder,
-  input,
-  handleChange,
-  type,
-}) => {
+const Input: React.FC<IProps> = ({ pHolder, input, handleChange, type }) => {
+  debugger;
   return (
     <input
       className='AddToList-input'
       type={type}
-      placeholder={placeholder}
-      name={placeholder.toLowerCase()}
+      placeholder={pHolder}
+      name={pHolder.toLowerCase()}
       value={input.name}
       onChange={(e) => {
         handleChange(e);
