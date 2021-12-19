@@ -8,7 +8,6 @@ interface IProps {
 }
 
 const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
-  debugger;
   const [input, setInput] = useState({
     name: "",
     url: "",
@@ -26,7 +25,6 @@ const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
   };
 
   const handleClick = (): void => {
-    debugger;
     if (!input.name || !input.age) return;
 
     setPeople([

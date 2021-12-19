@@ -20,9 +20,7 @@ const Input: React.FC<IProps> = ({
   type,
   value,
 }) => {
-  debugger;
   const nameGiven = pHolder.toLowerCase();
-  debugger;
   return (
     <input
       className='AddToList-input'
