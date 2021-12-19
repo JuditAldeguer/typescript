@@ -7,7 +7,9 @@ const AddToList = () => {
       <Input placeholder='Name' />
       <Input placeholder='Age' />
       <Input placeholder='Image Url' />
-      <Input placeholder='Name' />
+      <textarea className='AddToList-input' placeholder='Notes'>
+        Add
+      </textarea>
     </div>
   );
 };
