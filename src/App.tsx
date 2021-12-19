@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className='App'>
-      <p>Pople invited to my party </p>
+      <h1>h1ople invited to my party </h1>
       <List people={people} />
       <AddToList />
     </div>

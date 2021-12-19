@@ -24,7 +24,7 @@ const List: React.FC<IProps> = ({ people }) => {
       );
     });
   };
-  return <ul>{renderList}</ul>;
+  return <ul>{renderList()}</ul>;
 };
 
 export default List;
