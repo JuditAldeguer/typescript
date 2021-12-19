@@ -2,7 +2,12 @@ import React, { useState } from "react";
 
 interface IProps {
   placeholder: string;
-  input: Object;
+  input: {
+    name: string;
+    url: string;
+    age: string;
+    note: string;
+  };
   handleChange: Function;
 }
 
