@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 interface IProps {
   placeholder: string;
-  input: {};
-  handleChange: (e) => {};
+  input: Object;
+  handleChange: Function;
 }
 
-const Input: React.FC<IProps> = ({ placeholder, input }) => {
+const Input: React.FC<IProps> = ({ placeholder, input, handleChange }) => {
   return (
     <input
       className='AddToList-input'
@@ -14,7 +14,9 @@ const Input: React.FC<IProps> = ({ placeholder, input }) => {
       placeholder={placeholder}
       name={placeholder.toLowerCase()}
       value={input.name}
-      onChange={(e) => {}}
+      onChange={(e) => {
+        handleChange(e);
+      }}
     >
       Add
     </input>
