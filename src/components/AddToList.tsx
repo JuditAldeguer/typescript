@@ -7,7 +7,7 @@ interface IProps {
   setPeople: React.Dispatch<React.SetStateAction<Props["people"]>>;
 }
 
-const AddToList: React.FC<IProps> = () => {
+const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
   const [input, setInput] = useState({
     name: "",
     url: "",
@@ -24,13 +24,41 @@ const AddToList: React.FC<IProps> = () => {
     });
   };
 
-  const handleClick = (): void => {};
+  const handleClick = (): void => {
+    if (!input.name || !input.age || !input.url) {
+      return;
+    }
+    setPeople([
+      ...people,
+      {
+        name: input.name,
+        url: input.url,
+        age: parseInt(input.age),
+        note: input.note,
+      },
+    ]);
+  };
 
   return (
     <div className='AddToList'>
-      <Input placeholder='Name' input={input} handleChange={handleChange} />
-      <Input placeholder='Age' input={input} handleChange={handleChange} />
-      <Input placeholder='Url' input={input} handleChange={handleChange} />
+      <Input
+        placeholder='Name'
+        type='text'
+        input={input}
+        handleChange={handleChange}
+      />
+      <Input
+        placeholder='Age'
+        type='number'
+        input={input}
+        handleChange={handleChange}
+      />
+      <Input
+        placeholder='Url'
+        type='text'
+        input={input}
+        handleChange={handleChange}
+      />
       <textarea
         className='AddToList-input'
         placeholder='Notes'

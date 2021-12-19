@@ -9,13 +9,19 @@ interface IProps {
     note: string;
   };
   handleChange: Function;
+  type: string;
 }
 
-const Input: React.FC<IProps> = ({ placeholder, input, handleChange }) => {
+const Input: React.FC<IProps> = ({
+  placeholder,
+  input,
+  handleChange,
+  type,
+}) => {
   return (
     <input
       className='AddToList-input'
-      type='text'
+      type={type}
       placeholder={placeholder}
       name={placeholder.toLowerCase()}
       value={input.name}
