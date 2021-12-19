@@ -10,23 +10,30 @@ interface IProps {
   };
   handleChange: Function;
   type: string;
+  value: string;
 }
 
-const Input: React.FC<IProps> = ({ pHolder, input, handleChange, type }) => {
+const Input: React.FC<IProps> = ({
+  pHolder,
+  input,
+  handleChange,
+  type,
+  value,
+}) => {
+  debugger;
+  const nameGiven = pHolder.toLowerCase();
   debugger;
   return (
     <input
       className='AddToList-input'
       type={type}
+      name={nameGiven}
+      value={value}
       placeholder={pHolder}
-      name={pHolder.toLowerCase()}
-      value={input.name}
       onChange={(e) => {
         handleChange(e);
       }}
-    >
-      Add
-    </input>
+    ></input>
   );
 };
 

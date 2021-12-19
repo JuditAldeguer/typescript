@@ -26,9 +26,9 @@ const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
   };
 
   const handleClick = (): void => {
-    if (!input.name || !input.age || !input.url) {
-      return;
-    }
+    debugger;
+    if (!input.name || !input.age) return;
+
     setPeople([
       ...people,
       {
@@ -52,24 +52,28 @@ const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
         pHolder='Name'
         type='text'
         input={input}
+        value={input.name}
         handleChange={handleChange}
       />
       <Input
         pHolder='Age'
         type='number'
         input={input}
+        value={input.age}
         handleChange={handleChange}
       />
       <Input
         pHolder='Url'
         type='text'
         input={input}
+        value={input.url}
         handleChange={handleChange}
       />
       <textarea
         className='AddToList-input'
         placeholder='Notes'
         name='note'
+        value={input.note}
         onChange={handleChange}
       ></textarea>
       <button className='AddToList-btn' onClick={handleClick}>
