@@ -3,14 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import List from "./components/List";
 import AddToList from "./components/AddToList";
+import { People } from "./types/People";
 
-export interface IState {
-  people: {
-    name: string;
-    url: string;
-    age: number;
-    note?: string;
-  }[];
+interface IState {
+  people: People[];
 }
 
 function App() {

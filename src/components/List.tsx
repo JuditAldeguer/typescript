@@ -1,14 +1,9 @@
 import React from "react";
-import { IState as IProps } from "../App";
+import { People } from "../types/People";
 
-/* interface IProps {
-  people: {
-    name: string;
-    url: string;
-    age: number;
-    note?: string;
-  }[];
-} */
+interface IProps {
+  people: People[];
+}
 
 const List: React.FC<IProps> = ({ people }) => {
   const renderList = (): JSX.Element[] => {
