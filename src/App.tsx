@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>People invited to my party: </h1>
+      <h1>People invited to my party : </h1>
       <List people={people} />
       <AddToList people={people} setPeople={setPeople} />
     </div>
